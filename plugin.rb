@@ -7,8 +7,8 @@ require 'auth/oauth2_authenticator'
 
 class ExistingSiteAuthenticator < ::Auth::OAuth2Authenticator
 
-  CLIENT_ID = '035e0e38703d34b11a605bdd09195bfd8818846e0cbcf95f23c0028ac012b6ab'
-  CLIENT_SECRET = '5b6e8f46f0c4b7f799649be4b3c39fca5eb1e3caa81be1afe923967f275514a2'
+  CLIENT_ID = GlobalSetting.lb_oauth_client_id
+  CLIENT_SECRET = GlobalSetting.lb_oauth_client_secret
 
   def register_middleware(omniauth)
     omniauth.provider :littlebits_oauth,
@@ -21,7 +21,7 @@ require 'omniauth-oauth2'
 class OmniAuth::Strategies::LittlebitsOauth < OmniAuth::Strategies::OAuth2
 
   # NOTE VM has to be able to resolve
-  SITE_URL = 'http://localhost:3000'
+  SITE_URL = GlobalSetting.lb_oauth_site_url
 
   # Give your strategy a name.
   option :name, "littlebits_oauth"
