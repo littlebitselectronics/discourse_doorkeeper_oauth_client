@@ -40,7 +40,7 @@ class OmniAuth::Strategies::LittlebitsOauth < OmniAuth::Strategies::OAuth2
   info do
     {
       :email => raw_info['user']['email'],
-      :username => raw_info['user']['username']
+      :name => raw_info['user']['username']
     }
   end
 
