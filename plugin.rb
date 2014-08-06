@@ -56,7 +56,7 @@ class OmniAuth::Strategies::LittlebitsOauth < OmniAuth::Strategies::OAuth2
 end
 
 auth_provider :title => 'littleBits',
-    :message => 'Log in via the main site (Make sure pop up blockers are not enbaled).',
+    :message => 'Log in via the main site (Make sure pop up blockers are not enabled).',
     :frame_width => 920,
     :frame_height => 800,
     :authenticator => ExistingSiteAuthenticator.new('littlebits_oauth', trusted: true)
